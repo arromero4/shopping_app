@@ -1,46 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/cart_page.dart';
+import 'package:shopping_app/product_list.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentPage = 0;
+
+  List<Widget> pages = const [ProductList(), CartPage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Text(
-                    'Shoes\nCollection',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search',
-                      prefixIcon: Icon(Icons.search),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color.fromRGBO(225, 225, 225, 1),
-                        ),
-                        borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(50),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          ],
-        ),
+      body: IndexedStack(
+        index: currentPage,
+        children: pages,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 35,
+        selectedFontSize: 0,
+        unselectedFontSize: 0,
+        onTap: (value) {
+          setState(() {
+            currentPage = value;
+          });
+        },
+        currentIndex: currentPage,
+        items: const [
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(
+              Icons.shopping_cart,
+            ),
+          )
+        ],
       ),
     );
   }
