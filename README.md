@@ -5,6 +5,10 @@
 
 - ✅ Create the app
 - ✅ Build Layout
+- ✅ Create home page
+- ✅ Create Product Detail page
+- ✅ Add Navigation Bottom Bar
+- ✅ Add Provider - State Management
 
 
 - [x] Preparación para entrevista de Flutter.
