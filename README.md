@@ -9,6 +9,7 @@
 - ✅ Create Product Detail page
 - ✅ Add Navigation Bottom Bar
 - ✅ Add Provider - State Management
+- ✅ Layout Builder - Diseño responsivo.
 
 
 - [x] Preparación para entrevista de Flutter.
