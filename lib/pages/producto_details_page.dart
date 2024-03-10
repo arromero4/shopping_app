@@ -114,7 +114,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       backgroundColor: Theme.of(context).colorScheme.primary,
                       fixedSize: const Size(250, 50),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Add to cart',
                       style: TextStyle(
                         color: Colors.black,
